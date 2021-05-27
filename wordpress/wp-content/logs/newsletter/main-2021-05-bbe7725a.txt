@@ -1,0 +1,2 @@
+27-05-2021 08:49:11 - ERROR - v: 7.1.8 - m: 63.3 MB, u: 1 - cURL error 6: Could not resolve host: www.thenewsletterplugin.com (http_request_failed) - 
+27-05-2021 08:50:06 - ERROR - v: 7.1.8 - m: 69.1 MB, u: 1 - 
