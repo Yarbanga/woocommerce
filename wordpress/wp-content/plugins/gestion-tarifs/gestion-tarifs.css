@@ -1,0 +1,31 @@
+/*--- Style des input, select et boutons ---*/
+#tarif-titre {width:100%;}
+.tarif-prix {width:100%;}
+.devise-tarif {width:100%;}
+.type-tarif {width:100%;}
+.tva {width:100%;}
+.tarif-definitif {width:100%;}
+#prix-tarif {width:100%;}
+#intitule-tarif {width:100%;}
+#bouton-update {}
+#bouton-delete {}
+#form table th, #form table p {font-size:.9em !important;}
+#form input, #form select, #form2 input, #form2 select {font-size:.9em; height:2.4em;}
+#form2 label {font-weight:bold; display:block; padding-top:.4em;}
+#form2 select {width:100%; text-align:center;}
+
+/*--- Style et largeur des balises TH ---*/
+.th1 {width:26%;}
+.th2 {width:9%;}
+.th3 {width:8%;}
+.th4 {width:7%;}
+.th5 {width:8%;}
+.th6 {width:8%;}
+.th7 {width:10%;}
+.th8 {width:12%;}
+.th9 {width:7%;}
+.th10 {width:7%;}
+
+/*--- Configuration ---*/
+.config1 {width:10%;}
+.config2 {width:90%;}

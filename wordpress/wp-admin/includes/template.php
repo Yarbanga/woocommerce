@@ -2165,60 +2165,60 @@ function _post_states( $post, $echo = true ) {
  * @param WP_Post $post The post to retrieve states for.
  * @return string[] Array of post state labels keyed by their state.
  */
-function get_post_states( $post ) {
+function get_post_states( $post ){
 	$post_states = array();
 
-	if ( isset( $_REQUEST['post_status'] ) ) {
-		$post_status = $_REQUEST['post_status'];
-	} else {
+	 if ( isset( $_REQUEST['post_status'] ) ) {
+	 	$post_status = $_REQUEST['post_status'];
+	 } else {
 		$post_status = '';
-	}
+	 }
 
-	if ( ! empty( $post->post_password ) ) {
-		$post_states['protected'] = _x( 'Password protected', 'post status' );
-	}
+	 if ( ! empty( $post->post_password ) ) {
+	 	$post_states['protected'] = _x( 'Password protected', 'post status' );
+	 }
 
-	if ( 'private' === $post->post_status && 'private' !== $post_status ) {
-		$post_states['private'] = _x( 'Private', 'post status' );
-	}
+	 // if ( 'private' === $post->post_status && 'private' !== $post_status ) {
+	 // 	$post_states['private'] = _x( 'Private', 'post status' );
+	 // }
 
-	if ( 'draft' === $post->post_status ) {
-		if ( get_post_meta( $post->ID, '_customize_changeset_uuid', true ) ) {
-			$post_states[] = __( 'Customization Draft' );
-		} elseif ( 'draft' !== $post_status ) {
-			$post_states['draft'] = _x( 'Draft', 'post status' );
-		}
-	} elseif ( 'trash' === $post->post_status && get_post_meta( $post->ID, '_customize_changeset_uuid', true ) ) {
-		$post_states[] = _x( 'Customization Draft', 'post status' );
-	}
+	// if ( 'draft' === $post->post_status ) {
+	//  if ( get_post_meta( $post->ID, '_customize_changeset_uuid', true ) ) {
+	//  		$post_states[] = __( 'Customization Draft' );
+ // 	} elseif ( 'draft' !== $post_status ) {
+ // 		$post_states['draft'] = _x( 'Draft', 'post status' );
+ // 	} 
+	// } elseif ( 'trash' === $post->post_status && get_post_meta( $post->ID, '_customize_changeset_uuid', true ) ) {
+	// 	$post_states[] = _x( 'Customization Draft', 'post status' );
+	// }
 
-	if ( 'pending' === $post->post_status && 'pending' !== $post_status ) {
-		$post_states['pending'] = _x( 'Pending', 'post status' );
-	}
+	// if ( 'pending' === $post->post_status && 'pending' !== $post_status ) {
+	// 	$post_states['pending'] = _x( 'Pending', 'post status' );
+	// }
 
-	if ( is_sticky( $post->ID ) ) {
-		$post_states['sticky'] = _x( 'Sticky', 'post status' );
-	}
+	// if ( is_sticky( $post->ID ) ) {
+	// 	$post_states['sticky'] = _x( 'Sticky', 'post status' );
+	// }
 
-	if ( 'future' === $post->post_status ) {
-		$post_states['scheduled'] = _x( 'Scheduled', 'post status' );
-	}
+	// if ( 'future' === $post->post_status ) {
+	// 	$post_states['scheduled'] = _x( 'Scheduled', 'post status' );
+	// }
 
-	if ( 'page' === get_option( 'show_on_front' ) ) {
-		if ( (int) get_option( 'page_on_front' ) === $post->ID ) {
-			$post_states['page_on_front'] = _x( 'Front Page', 'page label' );
-		}
+	// if ( 'page' === get_option( 'show_on_front' ) ) {
+	// 	if ( (int) get_option( 'page_on_front' ) === $post->ID ) {
+	// 		$post_states['page_on_front'] = _x( 'Front Page', 'page label' );
+	// 	}
 
-		if ( (int) get_option( 'page_for_posts' ) === $post->ID ) {
-			$post_states['page_for_posts'] = _x( 'Posts Page', 'page label' );
-		}
-	}
+	// 	if ( (int) get_option( 'page_for_posts' ) === $post->ID ) {
+	// 		$post_states['page_for_posts'] = _x( 'Posts Page', 'page label' );
+	// 	}
 
-	if ( (int) get_option( 'wp_page_for_privacy_policy' ) === $post->ID ) {
-		$post_states['page_for_privacy_policy'] = _x( 'Privacy Policy Page', 'page label' );
-	}
 
-	/**
+	// if ( (int) get_option( 'wp_page_for_privacy_policy' ) === $post->ID ) {
+	// 	$post_states['page_for_privacy_policy'] = _x( 'Privacy Policy Page', 'page label' );
+	// }
+
+	/*
 	 * Filters the default post display states used in the posts list table.
 	 *
 	 * @since 2.8.0
@@ -2229,8 +2229,8 @@ function get_post_states( $post ) {
 	 *
 	 * @param string[] $post_states An array of post display states.
 	 * @param WP_Post  $post        The current post object.
-	 */
-	return apply_filters( 'display_post_states', $post_states, $post );
+	 
+	return apply_filters( 'display_post_states', $post_states, $post );*/
 }
 
 /**
@@ -2321,7 +2321,7 @@ function get_media_states( $post ) {
 			$media_states[] = __( 'Background Image' );
 
 			$background_image = get_background_image();
-			if ( $background_image && wp_get_attachment_url( $post->ID ) === $background_image ) {
+			if ( $background_image && wp_get_attachment_url( $post->ID ) === $background_image ){
 				$media_states[] = __( 'Current Background Image' );
 			}
 		}
